@@ -1,0 +1,4 @@
+/schedule - copy and refactor
+/favicon.ico - make new icon
+/home.css - refactor
+/global.css - refactor

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <title>SchedLink Lite</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="description" content="A lighter version of SchedLink for when SchedLink isn't available.">
+  <meta name="HandheldFriendly" content="true">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <script>
+    versionNum = 'beta1';
+  </script>
+  
+  <link rel="stylesheet" href="global.css?v=beta1">
+  <link rel="stylesheet" href="home.css?v=beta1">
+
+  <script type="text/javascript" src="bell-schedules.js?v=beta1"></script>
+  <script type="text/javascript" src="schedule-calendar.js?v=beta1"></script>
+
+  <script async defer src="script.js?v=beta1"></script>
+</head>
+
+<body onload="updateClock()">
+  <div class="wrapper">
+    <header style="-webkit-touch-callout: none; -webkit-user-select: none; user-select: none;">
+      <span id="header__anchor">SchedLink Lite</span>
+    </header>
+    <article id="main-content">
+
+      <noscript>
+        <style>
+          #period,
+          #countdown {
+            display: none;
+          }
+        </style>
+        <section class="block">
+          <section class="row">
+            <p
+              style="background: pink; color: black; font-size: calc(24 * min(0.2vw, 1px)); font-weight: bold; text-align: center; padding: 0.4em 0.9em; border: calc(6 * min(0.2vw, 1px)) solid red; margin: 0;">
+              You currently have JavaScript disabled. For full functionality, enable JavaScript. (<a
+                href="https://www.enable-javascript.com/" target="_blank"
+                style="color: inherit; text-decoration: underline !important;">How?</a>)
+            </p>
+          </section>
+        </section>
+      </noscript>
+
+      <section class="block">
+
+        <section class="row" id="period">
+          <div id="period__box" class="container">
+            <p id="period__name"></p>
+            <p id="period__time">Error</p>
+          </div>
+        </section>
+
+        <section class="row container" id="countdown">
+          <p id="countdown__timer">--:--</p>
+        </section>
+
+        <!-- <section class="row" id="extra-features">
+          <a href="schedule">
+            <div class="container hover">
+              View Schedule (not implemented yet)
+            </div>
+          </a>
+        </section> -->
+
+      </section>
+
+      <section class="block">
+
+        <section class="row" id="info">
+          <div class="container" id="splash" style="min-height: calc(50 * min(0.2vw, 1px)); padding: calc(10 * min(0.2vw, 1px)) calc(20 * min(0.2vw, 1px));">
+            <p id="splash__body">
+              SchedLink Lite is a website that you can use when <a href="https://schedlink.com/fishers">SchedLink</a> isn't available.
+            </p>
+          </div>
+        </section>
+
+      </section>
+
+    </article>
+  </div>
+  <script>(function(){(function(b,v_str){var showingV=false;b.addEventListener('dblclick',function(e){if(showingV){return;}showingV=true;var vc=document.createElement('p');vc.style='display: inline-block; overflow: hidden; margin: 0; width: 0; transition: width 0.5s ease; position: absolute;';var v=document.createElement('span');v.style='font-family: monospace; font-size: 16px; font-weight: bold; display: inline-block; position: absolute; right: 0; background: var(--container-color); color: var(--container-text-color); padding: 10px; border: 2px solid; border-radius: 0 10px 10px 0; line-height: 1';v.innerText=v_str;vc.appendChild(v);b.insertAdjacentElement('afterEnd',vc);setTimeout(function(){vc.style.height='40px';vc.style.width=(parseFloat(getComputedStyle(v).width)+24.01)+'px'});vc.addEventListener('transitionend',function(e){vc.style.transitionDelay='1s, 1s';vc.style.width='0';vc.addEventListener('transitionend',function(e){vc.parentElement.removeChild(vc);showingV=false;});});})})(document.querySelector('header'),versionNum);})();</script>
+
+</body>
+
+</html>
