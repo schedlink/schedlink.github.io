@@ -1,8 +1,5 @@
 function newDateAdjusted() {
-  return new Date(
-      Date.now() // user's clock
-    - 1000 // because it's easier to do this than fix the off-by-one error
-  );
+  return new Date(Date.now() - 1000);
 }
 
 var curPeriodI = null;
@@ -18,9 +15,9 @@ var updateClockFrame = 0;
 
 var displayData = {
   items: {
-    timer: {value: '--:--', elementId: 'countdown__timer'},
-    periodName: {value: '\u00a0', elementId: 'period__name'},
-    periodTime: {value: 'Loading', elementId: 'period__time'}
+    timer: {value: '(unset)', elementId: 'countdown__timer'},
+    periodName: {value: '(unset)', elementId: 'period__name'},
+    periodTime: {value: '(unset)', elementId: 'period__time'}
   },
   paint: function() {
     var pList = Object.keys(displayData.items);
@@ -42,6 +39,10 @@ function updateClock() {
     // new day
     window.location.reload();
     return;
+  } else if (!schedule) {
+    // invalid schedule
+    minsLeft = 0;
+    displayPeriod();
   } else if (curPeriodI !== null && curLunchI !== null) {
     // period with lunches
     minsLeft = (schedule[curPeriodI].lunches[curLunchI].EHours * 60)
@@ -104,12 +105,19 @@ function displayPeriod() {
   var periodToDisplay;
   if (curPeriodI === null) {
     // no period
-    if (schedName === 'No School') {
-      displayData.periodTime = 'No School Today';
-      displayData.periodName = newDateAdjusted().toLocaleDateString();
+    displayData.periodName = newDateAdjusted().toLocaleDateString();
+    if (!schedule) {
+      displayData.periodTime = 'Unknown Schedule';
+      document.getElementById('splash__body').innerHTML = 'Unfortunately, this schedule was not set up in SchedLink Lite. Sorry!';
+      document.getElementById('splash').style.background = 'pink';
+    } else if (schedule[0].noTimer) {
+      displayData.periodTime = (schedule[0].message || schedName);
+      if (schedule[0].unprogrammed) {
+        document.getElementById('splash__body').innerHTML = 'Unfortunately, this schedule was not set up in SchedLink Lite. Sorry!';
+        document.getElementById('splash').style.background = 'pink';
+      }
     } else {
       displayData.periodTime = 'Not School Hours';
-      displayData.periodName = '';
     }
     displayData.paint();
     return;

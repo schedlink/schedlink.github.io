@@ -1,49 +1,23 @@
 var JSON_schedule = {
   "No School": [
     {
-      "SHours": 0,
-      "SMin": 0,
-      "EHours": 0,
-      "EMin": 0,
-      "name": "Passing Period",
-      "color": "rgb(100,100,100)",
-      "important": false
-    },
-    {
-      "SHours": 0,
-      "SMin": 0,
-      "EHours": 0,
-      "EMin": 0,
-      "name": "No School"
+      noTimer: true,
+      message: "No School Today"
     }
   ],
-  "Unscheduled": [
+  "eLearning": [
     {
-      "SHours": 0,
-      "SMin": 0,
-      "EHours": 0,
-      "EMin": 0,
-      "name": "Passing Period",
-      "color": "rgb(0,0,0)",
-      "important": false
-    },
-    {
-      "SHours": 0,
-      "SMin": 0,
-      "EHours": 0,
-      "EMin": 0,
-      "name": "Unscheduled"
+      noTimer: true,
+      message: "eLearning Day"
     }
   ],
-  "Red Day": [
+  "Red": [
     {
       "SHours": 8,
       "SMin": 0,
       "EHours": 8,
       "EMin": 30,
-      "name": "Passing Period",
-      "color": "rgb(0,230,0)",
-      "important": true
+      "name": "Passing Period"
     },
     {
       "SHours": 8,
@@ -98,33 +72,33 @@ var JSON_schedule = {
           "SHours": 11,
           "SMin": 55,
           "EHours": 12,
-          "EMin": 0,
+          "EMin": 5,
           "name": "Class B/C"
         },
         {
           "SHours": 12,
-          "SMin": 0,
+          "SMin": 5,
           "EHours": 12,
-          "EMin": 5,
-          "name": "Lunch B; Class C"
+          "EMin": 10,
+          "name": "Class A/B/C"
         },
         {
           "SHours": 12,
-          "SMin": 05,
+          "SMin": 10,
           "EHours": 12,
-          "EMin": 30,
+          "EMin": 40,
           "name": "Lunch B; Class A/C"
         },
         {
           "SHours": 12,
-          "SMin": 30,
+          "SMin": 40,
           "EHours": 12,
-          "EMin": 35,
+          "EMin": 45,
           "name": "Class A/C"
         },
         {
           "SHours": 12,
-          "SMin": 35,
+          "SMin": 45,
           "EHours": 12,
           "EMin": 58,
           "name": "Class A/B/C"
@@ -153,15 +127,13 @@ var JSON_schedule = {
       "name": "Red Period 4 (R4)"
     }
   ],
-  "Silver Day": [
+  "Silver": [
     {
       "SHours": 8,
       "SMin": 0,
       "EHours": 8,
       "EMin": 30,
-      "name": "Passing Period",
-      "color": "rgb(0,230,0)",
-      "important": true
+      "name": "Passing Period"
     },
     {
       "SHours": 8,
@@ -216,33 +188,33 @@ var JSON_schedule = {
           "SHours": 11,
           "SMin": 55,
           "EHours": 12,
-          "EMin": 0,
+          "EMin": 5,
           "name": "Class B/C"
         },
         {
           "SHours": 12,
-          "SMin": 0,
+          "SMin": 5,
           "EHours": 12,
-          "EMin": 5,
-          "name": "Lunch B; Class C"
+          "EMin": 10,
+          "name": "Class A/B/C"
         },
         {
           "SHours": 12,
-          "SMin": 05,
+          "SMin": 10,
           "EHours": 12,
-          "EMin": 30,
+          "EMin": 40,
           "name": "Lunch B; Class A/C"
         },
         {
           "SHours": 12,
-          "SMin": 30,
+          "SMin": 40,
           "EHours": 12,
-          "EMin": 35,
+          "EMin": 45,
           "name": "Class A/C"
         },
         {
           "SHours": 12,
-          "SMin": 35,
+          "SMin": 45,
           "EHours": 12,
           "EMin": 58,
           "name": "Class A/B/C"
@@ -271,15 +243,259 @@ var JSON_schedule = {
       "name": "Silver Period 8 (S8)"
     }
   ],
+  "Finals 1,2": [
+    {
+      "SHours": 8,
+      "SMin": 0,
+      "EHours": 8,
+      "EMin": 30,
+      "name": "Passing Period"
+    },
+    {
+      "SHours": 8,
+      "SMin": 30,
+      "EHours": 9,
+      "EMin": 53,
+      "name": "Period 1 (Finals)"
+    },
+    {
+      "SHours": 9,
+      "SMin": 53,
+      "EHours": 10,
+      "EMin": 3,
+      "name": "Passing Period"
+    },
+    {
+      "SHours": 10,
+      "SMin": 3,
+      "EHours": 11,
+      "EMin": 25,
+      "name": "Period 2 (Finals)"
+    },
+    {
+      "SHours": 11,
+      "SMin": 25,
+      "EHours": 11,
+      "EMin": 25,
+      "name": "Passing Period"
+    },
+    {
+      "SHours": 11,
+      "SMin": 25,
+      "EHours": 13,
+      "EMin": 28,
+      "name": "Period 3 & Lunch",
+      "lunches": [
+        {
+          "SHours": 11,
+          "SMin": 25,
+          "EHours": 11,
+          "EMin": 35,
+          "name": "Lunch A"
+        },
+        {
+          "SHours": 11,
+          "SMin": 35,
+          "EHours": 11,
+          "EMin": 55,
+          "name": "Lunch A; Class B/C"
+        },
+        {
+          "SHours": 11,
+          "SMin": 55,
+          "EHours": 12,
+          "EMin": 5,
+          "name": "Class B/C"
+        },
+        {
+          "SHours": 12,
+          "SMin": 5,
+          "EHours": 12,
+          "EMin": 10,
+          "name": "Class A/B/C"
+        },
+        {
+          "SHours": 12,
+          "SMin": 10,
+          "EHours": 12,
+          "EMin": 40,
+          "name": "Lunch B; Class A/C"
+        },
+        {
+          "SHours": 12,
+          "SMin": 40,
+          "EHours": 12,
+          "EMin": 45,
+          "name": "Class A/C"
+        },
+        {
+          "SHours": 12,
+          "SMin": 45,
+          "EHours": 12,
+          "EMin": 58,
+          "name": "Class A/B/C"
+        },
+        {
+          "SHours": 12,
+          "SMin": 58,
+          "EHours": 13,
+          "EMin": 28,
+          "name": "Lunch C; Class A/B"
+        }
+      ]
+    },
+    {
+      "SHours": 13,
+      "SMin": 28,
+      "EHours": 13,
+      "EMin": 38,
+      "name": "Passing Period"
+    },
+    {
+      "SHours": 13,
+      "SMin": 28,
+      "EHours": 15,
+      "EMin": 0,
+      "name": "Period 4"
+    }
+  ],
+  "Finals 3,4": [
+    {
+      noTimer: true,
+      unprogrammed: true,
+      message: "Finals (Per. 3 and 4)"
+    }
+  ],
+  "Finals -,6": [
+    {
+      "SHours": 8,
+      "SMin": 0,
+      "EHours": 8,
+      "EMin": 30,
+      "name": "Passing Period"
+    },
+    {
+      "SHours": 8,
+      "SMin": 30,
+      "EHours": 9,
+      "EMin": 53,
+      "name": "Period 5 (TI)"
+    },
+    {
+      "SHours": 9,
+      "SMin": 53,
+      "EHours": 10,
+      "EMin": 3,
+      "name": "Passing Period"
+    },
+    {
+      "SHours": 10,
+      "SMin": 3,
+      "EHours": 11,
+      "EMin": 25,
+      "name": "Period 6 (Finals)"
+    },
+    {
+      "SHours": 11,
+      "SMin": 25,
+      "EHours": 11,
+      "EMin": 25,
+      "name": "Passing Period"
+    },
+    {
+      "SHours": 11,
+      "SMin": 25,
+      "EHours": 13,
+      "EMin": 28,
+      "name": "Period 7 & Lunch",
+      "lunches": [
+        {
+          "SHours": 11,
+          "SMin": 25,
+          "EHours": 11,
+          "EMin": 35,
+          "name": "Lunch A"
+        },
+        {
+          "SHours": 11,
+          "SMin": 35,
+          "EHours": 11,
+          "EMin": 55,
+          "name": "Lunch A; Class B/C"
+        },
+        {
+          "SHours": 11,
+          "SMin": 55,
+          "EHours": 12,
+          "EMin": 5,
+          "name": "Class B/C"
+        },
+        {
+          "SHours": 12,
+          "SMin": 5,
+          "EHours": 12,
+          "EMin": 10,
+          "name": "Class A/B/C"
+        },
+        {
+          "SHours": 12,
+          "SMin": 10,
+          "EHours": 12,
+          "EMin": 40,
+          "name": "Lunch B; Class A/C"
+        },
+        {
+          "SHours": 12,
+          "SMin": 40,
+          "EHours": 12,
+          "EMin": 45,
+          "name": "Class A/C"
+        },
+        {
+          "SHours": 12,
+          "SMin": 45,
+          "EHours": 12,
+          "EMin": 58,
+          "name": "Class A/B/C"
+        },
+        {
+          "SHours": 12,
+          "SMin": 58,
+          "EHours": 13,
+          "EMin": 28,
+          "name": "Lunch C; Class A/B"
+        }
+      ]
+    },
+    {
+      "SHours": 13,
+      "SMin": 28,
+      "EHours": 13,
+      "EMin": 38,
+      "name": "Passing Period"
+    },
+    {
+      "SHours": 13,
+      "SMin": 28,
+      "EHours": 15,
+      "EMin": 0,
+      "name": "Period 8"
+    }
+  ],
+  "Finals 7,8": [
+    {
+      noTimer: true,
+      unprogrammed: true,
+      message: "Finals 7, 8"
+    }
+  ],
   "Test Schedule 1": [
     {
       "SHours": 7,
       "SMin": 30,
       "EHours": 7,
       "EMin": 30,
-      "name": "Passing Period",
-      "color": "rgb(255,127,255)",
-      "important": false
+      "name": "Passing Period"
     },
     {
       "SHours": 7,
@@ -416,9 +632,7 @@ var JSON_schedule = {
       "SMin": 1,
       "EHours": 0,
       "EMin": 1,
-      "name": "Passing Period",
-      "color": "rgb(255,0,255)",
-      "important": false
+      "name": "Passing Period"
     },
     {
       "SHours": 0,
