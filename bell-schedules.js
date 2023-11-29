@@ -1,4 +1,10 @@
 var JSON_schedule = {
+  "None": [
+    {
+      noTimer: true,
+      message: "SchedLink Lite has been discontinued."
+    }
+  ],
   "No School": [
     {
       noTimer: true,
